@@ -60,9 +60,9 @@ def main():
 
         highest=0
         #print (np.max(imgd))
-        imgd = cv2.normalize(img_depth_old,None,0,255,cv2.NORM_MINMAX, dtype=cv2.CV_8U)
+        imgd = cv2.normalize(img_depth_old,None,0,255,cv2.NORM_MINMAX,dtype=cv2.CV_8U)
 
-        cv2.waitKey(0)
+        #cv2.waitKey(0)
         
         img = imgd
 
