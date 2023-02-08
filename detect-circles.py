@@ -60,6 +60,7 @@ def main():
 
         highest=0
         #print (np.max(imgd))
+
         imgd = cv2.normalize(img_depth_old,None,0,255,cv2.NORM_MINMAX,dtype=cv2.CV_8U)
 
         #cv2.waitKey(0)
@@ -71,9 +72,12 @@ def main():
 
         # Convert to grayscale.
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        _,thresh = cv2.threshold(gray,np.mean
+        (gray),255,cv2.THRESH_BINARY_INV)
         gray = imgd
+
         # Blur using 3 * 3 kernel.
-        gray_blurred = cv2.blur(gray, (3, 3))
+        gray_blurred = cv2.blur(thresh, (3, 3))
 
         # Apply Hough transform on the blurred image.
         detected_circles = cv2.HoughCircles(gray_blurred,
@@ -96,9 +100,10 @@ def main():
                 cv2.circle(img, (a, b), 1, (0, 0, 255), 3)
                 cv2.imshow("Detected Circle", img)
                 #print 
-                cv2.waitKey(0)
+                cv2.waitKey(1)
         else:
             cv2.imshow("NO Circles", img)
+            cv2.imshow("thresh",thresh)
                 #print 
             cv2.waitKey(1)
 if __name__=='__main__':
