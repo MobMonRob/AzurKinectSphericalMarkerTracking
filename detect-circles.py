@@ -67,6 +67,8 @@ def main():
         
         img = imgd
 
+        pcd = o3d.geometry.PointCloud.create_from_rgbd_image()
+
         #print (img)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
