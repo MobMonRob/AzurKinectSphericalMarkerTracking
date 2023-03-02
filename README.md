@@ -10,3 +10,8 @@ Bachelorarbeit zum Tracken von Markern mit einer Azur Kinect Kamera und Referenz
 - Open3D python3.8 -m pip install open3D
 - python 3.8
 - AzureKinectSDK
+
+## Steps  
+run file with Python 3.8 or newer
+
+python ./detect-circles.py
